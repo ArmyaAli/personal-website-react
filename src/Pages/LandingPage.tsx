@@ -1,26 +1,28 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { SwipeableDrawer } from "@material-ui/core";
-import NavBar from "../Components/NavBar";
+import { Header } from "../Components/Header/Header";
+import { Footer } from "../Components/Footer/Footer";
+import MiniDrawr from "../Components/MiniDrawer.tsx/MiniDrawr";
+import { makeStyles } from "@material-ui/core/styles";
+import Particles from "react-tsparticles";
+import { ParticlesBackground } from "../Components/ParticlesBackground/ParticlesBackground";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: "blue",
+  },
+}));
 
 export const LandingPage = () => {
-  const [drawerState, setdrawerState] = React.useState<boolean>(false);
-
-  const toggleDrawer = ($event: React.SyntheticEvent<{}, Event>) => {
-    setdrawerState(false);
-  };
-
+  const classes = useStyles();
   return (
-    <div>
-      <NavBar drawrStateSetter={setdrawerState} />
-      <SwipeableDrawer
-        style={{ width: "25%" }}
-        anchor={"left"}
-        open={drawerState}
-        onClose={toggleDrawer}
-        onOpen={toggleDrawer}
-      >
-          
-      </SwipeableDrawer>
+    <div className={classes.root}>
+      <Header />
+      <ParticlesBackground />
+      <MiniDrawr />
+      
+      
+      <Footer />
     </div>
   );
 };
