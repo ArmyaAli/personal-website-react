@@ -5,6 +5,7 @@ const drawerWidth = 256;
 export const useDrawerAppBarStypes = makeStyles((theme) => ({
     root: {
       display: "flex",
+      overflowX: "hidden",
     },
     appBar: {
       zIndex: theme.zIndex.drawer + 1,
@@ -13,6 +14,8 @@ export const useDrawerAppBarStypes = makeStyles((theme) => ({
         duration: theme.transitions.duration.leavingScreen,
       }),
       backgroundColor: "black",
+      maxWidth: '100%',
+      overflowX: "hidden",
     },
     appBarShift: {
       marginLeft: drawerWidth,
