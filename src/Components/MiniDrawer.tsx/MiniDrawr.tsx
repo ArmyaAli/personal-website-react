@@ -15,24 +15,34 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import InfoRoundedIcon from '@material-ui/icons/InfoRounded';
-import WorkRoundedIcon from '@material-ui/icons/WorkRounded';
-import ReceiptRoundedIcon from '@material-ui/icons/ReceiptRounded';
-import CreateRoundedIcon from '@material-ui/icons/CreateRounded';
-import ContactMailRoundedIcon from '@material-ui/icons/ContactMailRounded';
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+import InfoRoundedIcon from "@material-ui/icons/InfoRounded";
+import WorkRoundedIcon from "@material-ui/icons/WorkRounded";
+import ReceiptRoundedIcon from "@material-ui/icons/ReceiptRounded";
+import CreateRoundedIcon from "@material-ui/icons/CreateRounded";
+import ContactMailRoundedIcon from "@material-ui/icons/ContactMailRounded";
 import { useDrawerAppBarStypes } from "./miniDrawerStyles";
+import { Link } from "react-router-dom";
 
 const iconMap = {
-    "Home": <HomeRoundedIcon />,
-    "About Me": <InfoRoundedIcon />,
-    "Projects": <WorkRoundedIcon />,
-    "Resume": <ReceiptRoundedIcon />,
-    "Technical Skills": <CreateRoundedIcon/>,
-    "Contact": <ContactMailRoundedIcon/>
-}
+  Home: <HomeRoundedIcon />,
+  "About Me": <InfoRoundedIcon />,
+  Projects: <WorkRoundedIcon />,
+  Resume: <ReceiptRoundedIcon />,
+  "Technical Skills": <CreateRoundedIcon />,
+  Contact: <ContactMailRoundedIcon />,
+};
 
-const ROUTES = [
+const ROUTES = {
+  Home: "/",
+  "About Me": "/aboutme",
+  Projects: "/projects",
+  Resume: "/resume",
+  "Technical Skills":"/skills",
+  Contact: "/contact",
+};
+
+const TITLES = [
   "Home",
   "About Me",
   "Projects",
@@ -105,13 +115,10 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {ROUTES.map((text: string) => {
-
+          {TITLES.map((text: string) => {
             return (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                    {iconMap[text]}
-                </ListItemIcon>
+              <ListItem component={Link} to={ROUTES[text]} button key={text}>
+                <ListItemIcon>{iconMap[text]}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             );
