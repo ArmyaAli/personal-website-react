@@ -7,10 +7,6 @@ import { ParticlesBackground } from "../Components/ParticlesBackground/Particles
 export const LandingPage = () => {
   return (
     <div>
-      <Header />
-      <ParticlesBackground />
-      <MiniDrawr />
-      <Footer />
     </div>
   );
 };
