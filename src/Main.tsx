@@ -16,10 +16,10 @@ import { ContactPage } from "./Pages/ContactPage";
 function App() {
   return (
     <div>
-      <Header />
       <ParticlesBackground />
       <Router>
         <MiniDrawr />
+        <Header />
         <Switch>
           <Route exact path="/">
             <LandingPage />
