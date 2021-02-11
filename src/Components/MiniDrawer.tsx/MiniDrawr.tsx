@@ -23,6 +23,7 @@ import CreateRoundedIcon from "@material-ui/icons/CreateRounded";
 import ContactMailRoundedIcon from "@material-ui/icons/ContactMailRounded";
 import { useDrawerAppBarStypes } from "./miniDrawerStyles";
 import { Link } from "react-router-dom";
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 
 const iconMap = {
   Home: <HomeRoundedIcon />,
@@ -53,7 +54,6 @@ const TITLES = [
 
 export default function MiniDrawer() {
   const classes = useDrawerAppBarStypes();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -106,18 +106,14 @@ export default function MiniDrawer() {
       >
         <div className={classes.toolbar}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
               <ChevronLeftIcon />
-            )}
           </IconButton>
         </div>
         <Divider />
         <List>
           {TITLES.map((text: string) => {
             return (
-              <ListItem component={Link} to={ROUTES[text]} button key={text}>
+              <ListItem onClick = {handleDrawerClose} component={Link} to={ROUTES[text]} button key={text}>
                 <ListItemIcon>{iconMap[text]}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>

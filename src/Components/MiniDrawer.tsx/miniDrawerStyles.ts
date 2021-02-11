@@ -1,4 +1,4 @@
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 const drawerWidth = 256;
 
@@ -42,7 +42,7 @@ export const useDrawerAppBarStypes = makeStyles((theme) => ({
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      backgroundColor: 'purple'
+      backgroundColor: '#00ed40'
     },
     drawerClose: {
       transition: theme.transitions.create("width", {
@@ -54,7 +54,7 @@ export const useDrawerAppBarStypes = makeStyles((theme) => ({
       [theme.breakpoints.up("sm")]: {
         width: theme.spacing(7) + 1,
       },
-      backgroundColor: 'purple'
+      backgroundColor: '#00ed40'
     },
     toolbar: {
       display: "flex",
