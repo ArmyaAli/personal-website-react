@@ -1,6 +1,15 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useFooterStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        position: 'relative',
+        margin: '16px auto',
+        padding: '16px',
+        color: 'white'
+    },
     container: {
         position: 'relative',
         display: 'flex',
