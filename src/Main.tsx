@@ -1,22 +1,21 @@
 import React from "react";
-import { LandingPage } from "./Pages/LandingPage";
+import { LandingPage } from "./Pages/LandingPage/LandingPage";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { ProjectsPage } from "./Pages/ProjectsPage";
+import { ProjectsPage } from "./Pages/ProjectsPage/ProjectsPage";
 import { Header } from "./Components/Header/Header";
 import { ParticlesBackground } from "./Components/ParticlesBackground/ParticlesBackground";
 import MiniDrawr from "./Components/MiniDrawer.tsx/MiniDrawr";
 import { Footer } from "./Components/Footer/Footer";
-import { AboutMePage } from "./Pages/AboutMePage";
-import { ResumePage } from "./Pages/ResumePage";
-import { SkillsPage } from "./Pages/SkillsPage";
-import { Contactless } from "@material-ui/icons";
-import { ContactPage } from "./Pages/ContactPage";
+import { AboutMePage } from "./Pages/AboutMePage/AboutMePage";
+import { ResumePage } from "./Pages/ResumePage/ResumePage";
+import { SkillsPage } from "./Pages/SkillsPage/SkillsPage";
+import { ContactPage } from "./Pages/ContactPage/ContactPage";
 
 function App() {
   return (
     <div>
-      <ParticlesBackground />
+      {/* <ParticlesBackground /> */}
       <Router>
         <MiniDrawr />
         <Header />
